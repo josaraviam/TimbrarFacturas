@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd" Version="4.0" Serie="A" Folio="12345" Fecha="2024-03-05T12:00:00" FormaPago="01" CondicionesDePago="Contado" SubTotal="1000.00" Moneda="MXN" Total="1160.00" TipoDeComprobante="I" MetodoPago="PUE" LugarExpedicion="64000" Sello="XBFS3g9cFkrx5DY9P+lUn+Aea/1Y4t5P62ZYb8y2sPeL1vAmqajmlOhQOn/1wRbiFOP8UyKrrwNRCWRWXmWEevAupT+YtEJ1emsf1FSStikuyMj4gIsC57lQjqOpJR7bmwNDv2uRlOh0G+nVZS20YLVV+ySjSAgcA904mlsliktG2pwlJnDkeWiAfdGXZ+9RAn2NnODMNJs1osqbC1Yv+73D1Fa6MGxIFcpNow4XLve7wat2UgVxnj8lSViq4N5hfekQvZEBd9weN2zAMzZbkjggOdKiQgYmog53c8+0IOQJvhVKeMsmO8d+z8qKoPiu7QUdeUIowIF/1l/sFH5WxA==">
 
-    <cfdi:Emisor Rfc="AAA010101AAAA" Nombre="EMPRESA EMISORA S.A. DE C.V." RegimenFiscal="601"/>
+    <cfdi:Emisor Rfc="AAA010101AAA" Nombre="EMPRESA EMISORA S.A. DE C.V." RegimenFiscal="601"/>
     
     <cfdi:Receptor Rfc="BBB020202BBB" Nombre="CLIENTE EJEMPLO" UsoCFDI="G03"/>
     

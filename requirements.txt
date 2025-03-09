@@ -1,0 +1,6 @@
+lxml
+cryptography
+PyOpenSSL
+signxml
+requests
+fiscalapi
