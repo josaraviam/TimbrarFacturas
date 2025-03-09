@@ -35,7 +35,7 @@ invoice = Invoice(
 
     # Datos del Emisor (empresa que emite la factura)
     issuer=InvoiceIssuer(
-        tin="AAA010101AAA",  # RFC del emisor
+        tin="AAA010101AX5",  # RFC del emisor
         legal_name="EMPRESA EMISORA S.A. DE C.V.",  # Razón social del emisor
         tax_regime_code="601",  # Régimen fiscal del emisor
         tax_credentials=[  # Archivos de firma digital
@@ -54,7 +54,7 @@ invoice = Invoice(
 
     # Datos del Receptor (cliente que recibe la factura)
     recipient=InvoiceRecipient(
-        tin="BBB020202AX9",  # RFC del receptor
+        tin="BBB020202BX6",  # RFC del receptor
         legal_name="CLIENTE EJEMPLO",  # Nombre del receptor
         zip_code="64000",  # Código postal del receptor
         tax_regime_code="601",  # Régimen fiscal del receptor

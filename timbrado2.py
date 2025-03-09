@@ -1,5 +1,6 @@
 import requests
 
+
 def obtener_token(user, password):
     """
     Realiza la autenticación para obtener un token de acceso.
@@ -17,6 +18,7 @@ def obtener_token(user, password):
         return token
     except requests.exceptions.RequestException as e:
         raise Exception(f"Error en la petición de autenticación: {e}")
+
 
 def timbrar_xml(token, xml_path):
     """
@@ -37,6 +39,7 @@ def timbrar_xml(token, xml_path):
         raise Exception(f"Error en la petición de timbrado: {e}")
     except IOError as e:
         raise Exception(f"Error al abrir el archivo XML: {e}")
+
 
 if __name__ == "__main__":
     # Credenciales de usuario para autenticación (reemplazar con datos reales)
