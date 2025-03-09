@@ -1,5 +1,7 @@
 from datetime import datetime
 from decimal import Decimal
+import base64
+import os
 from fiscalapi.models.common_models import FiscalApiSettings
 from fiscalapi.services.fiscalapi_client import FiscalApiClient
 from fiscalapi.models.fiscalapi_models import Invoice, InvoiceIssuer, InvoiceItem, InvoiceRecipient, ItemTax, TaxCredential
@@ -14,9 +16,25 @@ settings = FiscalApiSettings(
 # Crear cliente de FiscalAPI
 client = FiscalApiClient(settings=settings)
 
-# Base64 de los archivos CER y KEY (para autenticación y firma)
-CER_BASE64 = """MIIF0TCCA7mgAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDMyODIwDQYJKoZIhvcNAQELBQAwggEr..."""
-KEY_BASE64 = """MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb..."""
+# Leer y convertir a base64 los archivos CER y KEY
+def read_file_as_base64(file_path):
+    with open(file_path, "rb") as file:
+        file_content = file.read()
+        return base64.b64encode(file_content).decode('utf-8')
+
+# Rutas con las ubicaciones los archivos
+CER_FILE_PATH = "X:\\TimbrarFacturas\\mi_certificado.cer"
+KEY_FILE_PATH = "X:\\TimbrarFacturas\\mi_llave.key"
+
+
+# Leer archivos y convertirlos a base64
+try:
+    CER_BASE64 = read_file_as_base64(CER_FILE_PATH)
+    KEY_BASE64 = read_file_as_base64(KEY_FILE_PATH)
+except Exception as e:
+    print(f"Error al leer los archivos CER/KEY: {str(e)}")
+    print("Verifica que las rutas sean correctas y que los archivos existan.")
+    exit(1)
 
 # Crear objeto Invoice con los datos de la factura a timbrar
 invoice = Invoice(
@@ -85,6 +103,7 @@ invoice = Invoice(
 )
 
 # Enviar solicitud de timbrado al servicio de FiscalAPI
+print("Enviando solicitud de timbrado...")
 api_response = client.invoices.create(invoice)
 
 # Verificar si la factura fue timbrada exitosamente
@@ -98,3 +117,5 @@ if api_response.succeeded:
     print("📄 Factura guardada en 'factura_timbrada.xml'.")
 else:
     print("❌ ERROR en timbrado:", api_response.message)
+    if hasattr(api_response, 'data') and api_response.data:
+        print("Detalles del error:", api_response.data)
