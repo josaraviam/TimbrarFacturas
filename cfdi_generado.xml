@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.0" Serie="A" Folio="12345" Fecha="2024-03-09T12:00:00" FormaPago="01" CondicionesDePago="Contado" SubTotal="1000.00" Moneda="MXN" Total="1160.00" TipoDeComprobante="I" MetodoPago="PUE" LugarExpedicion="64000" NoCertificado="30001000000400002434">
   <cfdi:Emisor Rfc="AAA010101AAA" Nombre="EMPRESA EMISORA S.A. DE C.V." RegimenFiscal="601"/>
-  <cfdi:Receptor Rfc="BBB020202BBB" Nombre="CLIENTE EJEMPLO" UsoCFDI="G03" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="601"/>
+  <cfdi:Receptor Rfc="BBB020202BX6" Nombre="CLIENTE EJEMPLO" UsoCFDI="G03" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="601"/>
   <cfdi:Conceptos>
     <cfdi:Concepto ClaveProdServ="01010101" Cantidad="1" ClaveUnidad="H87" Descripcion="Producto de prueba" ValorUnitario="1000.00" Importe="1000.00" ObjetoImp="02"/>
   </cfdi:Conceptos>

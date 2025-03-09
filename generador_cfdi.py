@@ -1,5 +1,6 @@
 from lxml import etree
 
+
 def generar_xml_cfdi():
     """Genera un archivo XML CFDI 4.0 con datos de emisor, receptor, conceptos e impuestos."""
 
@@ -29,14 +30,14 @@ def generar_xml_cfdi():
 
     # Agregar el nodo Emisor con su información fiscal
     emisor = etree.SubElement(cfdi, "{http://www.sat.gob.mx/cfd/4}Emisor",
-                              Rfc="AAA010101AAA",
+                              Rfc="AAA010101AX5",
                               Nombre="EMPRESA EMISORA S.A. DE C.V.",
                               RegimenFiscal="601"
                               )
 
     # Agregar el nodo Receptor con su información fiscal
     receptor = etree.SubElement(cfdi, "{http://www.sat.gob.mx/cfd/4}Receptor",
-                                Rfc="BBB020202BBB",
+                                Rfc="BBB020202BX6",
                                 Nombre="CLIENTE EJEMPLO",
                                 UsoCFDI="G03",
                                 DomicilioFiscalReceptor="64000",
@@ -72,6 +73,7 @@ def generar_xml_cfdi():
         f.write(xml_string)
 
     print("✅ XML CFDI 4.0 generado correctamente: cfdi_generado.xml")
+
 
 # Ejecutar la función para generar el XML CFDI
 generar_xml_cfdi()

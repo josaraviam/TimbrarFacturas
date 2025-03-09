@@ -41,6 +41,7 @@ try:
 except Exception as e:
     print(f"✗ Error al parsear XSLT: {e}")
 
+
 def generar_cadena_original(xml_path, xslt_path):
     """Genera la cadena original a partir del XML y la transforma usando XSLT."""
     try:
@@ -59,6 +60,7 @@ def generar_cadena_original(xml_path, xslt_path):
         print(f"❌ Error al generar la cadena original: {e}")
     return None
 
+
 def cargar_llave_privada(ruta_key, password):
     """Carga la llave privada desde un archivo en formato DER."""
     try:
@@ -68,6 +70,7 @@ def cargar_llave_privada(ruta_key, password):
     except Exception as e:
         print(f"❌ Error al cargar la llave privada: {e}")
         return None
+
 
 def firmar_cadena(cadena_original, llave_privada):
     """Firma la cadena original usando SHA256 y la clave privada."""
@@ -83,6 +86,7 @@ def firmar_cadena(cadena_original, llave_privada):
         print(f"❌ Error al firmar la cadena original: {e}")
         return None
 
+
 def insertar_sello_en_xml(xml_path, sello, output_path):
     """Inserta el sello digital en el XML y lo guarda en un nuevo archivo."""
     try:
@@ -93,6 +97,7 @@ def insertar_sello_en_xml(xml_path, sello, output_path):
         print(f"✅ XML firmado correctamente: {output_path}")
     except Exception as e:
         print(f"❌ Error al insertar el sello en el XML: {e}")
+
 
 if __name__ == "__main__":
     # Definición de archivos

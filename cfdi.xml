@@ -15,9 +15,9 @@
     MetodoPago="PUE" 
     LugarExpedicion="64000">
 
-    <cfdi:Emisor Rfc="AAA010101AAA" Nombre="EMPRESA EMISORA S.A. DE C.V." RegimenFiscal="601"/>
+    <cfdi:Emisor Rfc="AAA010101AX5" Nombre="EMPRESA EMISORA S.A. DE C.V." RegimenFiscal="601"/>
     
-    <cfdi:Receptor Rfc="BBB020202BBB" Nombre="CLIENTE EJEMPLO" UsoCFDI="G03"/>
+    <cfdi:Receptor Rfc="BBB020202BX6" Nombre="CLIENTE EJEMPLO" UsoCFDI="G03"/>
     
     <cfdi:Conceptos>
         <cfdi:Concepto ClaveProdServ="01010101" 
